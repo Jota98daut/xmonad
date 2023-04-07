@@ -20,6 +20,18 @@ myLayout =  smartSpacingWithEdge 10 $ avoidStruts $ tiled ||| Mirror tiled ||| n
 
 mySB = statusBarProp "xmobar" (clickablePP xmobarPP)
 
+myWorkspaces :: [WorkspaceId]
+myWorkspaces  = [ "\61728 " -- 
+                , "\62057 " -- 
+                , "\61729 " -- 
+                , "AYL"
+                , "IA"
+                , "SIM"
+                , "\984687 " -- 󰙯
+                , "\61884 " -- 
+                , "9"
+                ]
+
 myManageHook :: ManageHook
 myManageHook = composeAll
   [ isDialog  --> doFloat ]
@@ -38,6 +50,7 @@ main = xmonad
 myConfig = def
   { terminal    = "kitty"
   , modMask     = mod4Mask
+  , workspaces  = myWorkspaces
   , layoutHook  = myLayout
   , manageHook  = myManageHook
   , logHook     = myLogHook
